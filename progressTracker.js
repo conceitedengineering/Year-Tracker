@@ -7,9 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let week = 1; week <= totalWeeks; week++) {
         // Create a div element for each week
         let weekDiv = document.createElement('div');
-        weekDiv.classList.add('w-14', 'h-14', 'rounded-lg', 'shadow', 'border', 'border-gray-300'); // Updated Tailwind classes
+        weekDiv.classList.add(
+            'w-6', 'h-6', // Smaller size for mobile
+            'md:w-14', 'md:h-14', // Larger size for desktop
+            'rounded-lg', 'shadow', 
+            'border', 'border-gray-300'
+        );
 
-        // Color the past weeks red and active future weeks white
+        // Color the past weeks red, active future weeks white, and extra weeks grey
         if (week <= currentWeek) {
             weekDiv.classList.add('bg-red-500');
         } else if (week <= activeWeeks) {
